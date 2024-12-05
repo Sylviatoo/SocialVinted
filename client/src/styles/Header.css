@@ -1,0 +1,46 @@
+header {
+  background: linear-gradient(
+    90deg,
+    #536fac 0%,
+    #6d9cb6 21.1%,
+    #8bcdc2 62.6%,
+    #a8d5ba 92.1%
+  );
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.logo {
+  width: 10%;
+  padding: 10px;
+  justify-content: center;
+}
+
+.title {
+  color: white;
+  text-align: center;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.button {
+  border-radius: 20px;
+  background: linear-gradient(90deg, #5877ae 0%, #738fbf 100%);
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: rgb(244, 244, 244);
+  margin-bottom: 20px;
+  border-style: none;
+}

@@ -1,0 +1,19 @@
+.FSbutton {
+  border-radius: 20px;
+  background: linear-gradient(270deg, #79afbb 0%, #79c2d3 100%);
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: rgb(244, 244, 244);
+  margin-bottom: 20px;
+  border-style: none;
+}
+
+.divButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 20px;
+  margin: 20px;
+}
