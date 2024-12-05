@@ -1,0 +1,74 @@
+.modal-image {
+  width: 100%;
+}
+.DialogOverlay {
+  background-color: var(--black-a9);
+  position: fixed;
+  inset: 0;
+  animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.DialogContent {
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%)
+    0px 10px 20px -15px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 450px;
+  max-height: 85vh;
+  padding: 25px;
+  animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.DialogContent:focus {
+  outline: none;
+}
+.DialogTitle {
+  font-weight: 800;
+  font-size: 20px;
+  font-family: "Roboto", serif;
+}
+.DialogDescription {
+  font-size: 15px;
+  line-height: 1.5;
+}
+.IconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border-style: none;
+  border-color: white;
+  background: linear-gradient(90deg, #5877ae 0%, #738fbf 100%);
+  border-radius: 100px;
+  height: 25px;
+  width: 25px;
+  background-color: white;
+}
+.Fieldset {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+@keyframes overlayShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes contentShow {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
