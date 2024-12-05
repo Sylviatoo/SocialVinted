@@ -7,6 +7,7 @@ const router = express.Router();
 /* ************************************************************************* */
 
 // Define item-related routes
+import conditionActions from "./modules/condition/conditionActions";
 import donationCategoryActions from "./modules/donation/category/donationCategoryActions";
 import donationActions from "./modules/donation/donationActions";
 import serviceCategoryActions from "./modules/service/category/serviceCategoryActions";
@@ -37,6 +38,10 @@ router.delete("/api/services/:id", serviceActions.remove);
 // Define service-category-related routes
 router.get("/api/service_categories", serviceCategoryActions.browse);
 router.get("/api/service_categories/:id", serviceCategoryActions.read);
+
+// Define condition-related routes
+router.get("/api/condition_categories", conditionActions.browse);
+router.get("/api/condition_categories/:id", conditionActions.read);
 
 /* ************************************************************************* */
 
