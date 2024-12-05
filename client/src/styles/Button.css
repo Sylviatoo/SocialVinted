@@ -9,6 +9,7 @@
   align-items: center;
   font-size: 18px;
   height: 37px;
+  cursor: pointer;
 }
 
 .FSbutton:hover {
