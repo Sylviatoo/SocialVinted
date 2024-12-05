@@ -8,8 +8,8 @@ export default function Footer({ titleFooter, mentionslegales }: FooterProps) {
   return (
     <>
       <footer>
-        <h1>{titleFooter}</h1>
-        <h1>{mentionslegales}</h1>
+        <h1 className="title-footer">{titleFooter}</h1>
+        <h1 className="title-footer">{mentionslegales}</h1>
       </footer>
     </>
   );

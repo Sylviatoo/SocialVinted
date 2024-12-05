@@ -15,14 +15,13 @@ export default function Giving() {
   return (
     <>
       <header>
-        <div className="header">
-          <img
-            className="logo"
-            alt="logo du site"
-            src={imgUrl}
-            onClick={handleClick}
-            onKeyDown={handleClick}
-          />
+        <div
+          className="header"
+          id="header-giving"
+          onClick={handleClick}
+          onKeyDown={handleClick}
+        >
+          <img className="logo" alt="logo du site" src={imgUrl} />
           <h2 className="title">Social Vinted</h2>
         </div>
       </header>
