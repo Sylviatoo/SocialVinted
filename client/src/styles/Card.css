@@ -1,62 +1,108 @@
+.section-annonces {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 90vw;
+  max-width: 350px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.card-text {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: black;
+}
+
+.card-date {
+  font-size: 0.9rem;
+  color: #4a4a4a;
+  font-weight: 400;
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    width: 45vw;
+    max-width: 300px;
+  }
+
+  .card-image {
+    height: 200px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .section-annonces {
+    justify-content: flex-start;
+  }
+
+  .card {
+    width: 22vw;
+    max-width: 350px;
+  }
+
+  .card-image {
+    height: 220px;
+  }
+}
+
 .modal-image {
   width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 16px;
 }
-.DialogOverlay {
-  background-color: var(--black-a9);
-  position: fixed;
-  inset: 0;
-  animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-.DialogContent {
-  background-color: white;
-  border-radius: 6px;
-  box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%)
-    0px 10px 20px -15px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90vw;
-  max-width: 450px;
-  max-height: 85vh;
-  padding: 25px;
-  animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-.DialogContent:focus {
-  outline: none;
-}
-.DialogTitle {
-  font-weight: 800;
-  font-size: 20px;
-  font-family: "Roboto", serif;
-}
-.DialogDescription {
-  font-size: 15px;
-  line-height: 1.5;
-}
-.IconButton {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  border-style: none;
-  border-color: white;
-  background: linear-gradient(90deg, #5877ae 0%, #738fbf 100%);
-  border-radius: 100px;
-  height: 25px;
-  width: 25px;
-  background-color: white;
-}
-.Fieldset {
-  display: flex;
-  gap: 5px;
-  align-items: center;
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5) translate(-50%, -50%);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translate(-50%, -50%);
+  }
 }
 
 @keyframes overlayShow {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -67,8 +113,97 @@
     opacity: 0;
     transform: translate(-50%, -48%) scale(0.96);
   }
+
   to {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
+}
+
+.DialogOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.DialogContent {
+  position: fixed;
+  background-color: white;
+  padding: 24px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  z-index: 20;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.DialogContent:focus {
+  outline: none;
+}
+
+.DialogTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.DialogDescription {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.IconButton {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.IconButton:focus {
+  outline: none;
+}
+
+.IconButton svg {
+  width: 24px;
+  height: 24px;
+  color: #555;
+}
+
+.Fieldset {
+  margin-bottom: 12px;
+}
+
+.Label {
+  font-weight: bold;
+  color: #333;
+}
+
+.UserInfo {
+  margin: 4px 0 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.Button.green {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.Button.green:hover {
+  background-color: #45a049;
 }

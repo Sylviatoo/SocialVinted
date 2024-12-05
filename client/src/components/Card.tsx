@@ -25,8 +25,10 @@ export default function Card({
         <Dialog.Trigger asChild>
           <div className="card">
             <img className="card-image" src={img} alt="image-annonce" />
-            <h2>{title}</h2>
-            <p>{date}</p>
+            <div className="card-text">
+              <h2 className="card-title">{title}</h2>
+              <p className="card-date">{date}</p>
+            </div>
           </div>
         </Dialog.Trigger>
         <Dialog.Portal>

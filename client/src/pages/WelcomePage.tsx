@@ -1,3 +1,4 @@
+import Card from "../components/Card";
 import FilterButton from "../components/FilterButton";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -20,6 +21,24 @@ export default function WelcomePage() {
           <FilterButton buttonFilter={buttonFilter} />
           <SortButton buttonSort={buttonSort} />
         </div>
+        <section className="section-annonces">
+          <Card
+            user="Charlotte"
+            title="Ordi ultra performant"
+            state="t'inquiètes"
+            date="05/12/2024"
+            description="Je fais don de mon ordinateur de compète. Apprenez à le dompter et vous serez satisfait."
+            img="https://i.ebayimg.com/images/g/kJUAAOSw76Bmfo0j/s-l1600.webp"
+          />
+          <Card
+            user="Julien"
+            title="Grande étagère"
+            state="très bon état"
+            date="06/12/2024"
+            description="Je me débarasse de cette étagère quasi neuve pour cause de déménagement."
+            img="https://www.robindesbois.com/6428-large_default/etagere-bibliotheque-bois-et-metal-dante.jpg"
+          />
+        </section>
       </main>
       <Footer titleFooter={titleFooter} mentionslegales={mentionslegales} />
     </div>
