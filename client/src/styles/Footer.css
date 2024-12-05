@@ -1,0 +1,17 @@
+footer {
+  background: linear-gradient(
+    90deg,
+    #536fac 0%,
+    #6d9cb6 21.1%,
+    #8bcdc2 62.6%,
+    #a8d5ba 92.1%
+  );
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 1rem;
+}
