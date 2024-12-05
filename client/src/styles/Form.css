@@ -25,6 +25,23 @@ label {
   color: #333;
 }
 
+select {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  padding-right: 30px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+  box-sizing: border-box;
+  background-color: white;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='5'%3E%3Cpolygon points='0,0 10,0 5,5' fill='%23777'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
 select,
 input[type="text"] {
   width: 100%;
