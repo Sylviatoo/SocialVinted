@@ -11,8 +11,7 @@
   padding-left: 2vw;
   padding-block: 2vw;
   width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 10vw;
+
   font-size: 3.5vw;
 }
 
@@ -33,7 +32,7 @@
 }
 
 .search-button:hover {
-  background-color: #ffffff;
+  opacity: 0;
 }
 
 .image-loupe {

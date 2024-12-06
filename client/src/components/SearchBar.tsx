@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "../assets/styles/SearchBar.css";
+import "/src/styles/SearchBar.css";
 import type { Card } from "../types/interface";
 
 interface SearchBarProps {

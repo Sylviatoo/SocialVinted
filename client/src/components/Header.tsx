@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "../assets/styles/Header.css";
+import "/src/styles/Header.css";
 import SearchBar from "../components/SearchBar";
 
 interface HeaderProps {

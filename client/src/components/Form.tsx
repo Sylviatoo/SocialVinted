@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../assets/styles/Form.css";
+import "/src/styles/Form.css";
 import { useNavigate } from "react-router-dom";
 
 export default function Form() {

@@ -1,4 +1,4 @@
-import "../assets/styles/Footer.css";
+import "/src/styles/Footer.css";
 
 interface FooterProps {
   titleFooter: string;
