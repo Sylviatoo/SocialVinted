@@ -198,21 +198,5 @@ values
  
 insert into service (id, date, title, description, category_id, user_id)
 values
- (1,
-  "2024-11-25",
-  "Services pour votre quotidien",
-  "J'offre des services de bricolage en électricité, plomberie, motage de meubles, etc...",
-  1,
-  1),
- (2,
-  "2024-12-05",
-  "Services pour réparation et maintenance de votre voiture",
-  "J'offre des services de réparation de votre véhicule.",
-  1,
-  4),
- (3,
-  "2024-12-06",
-  "Professeur de musique (je crois)",
-  "Incroyable prof de violon (qui ne vous jouera pas du pipo!) Propose ses services les yeux bandés, avec une main dans le dos, en tenant un bâton depuis l'autre côté de la rue. Beaucoup de recommandations : 7 frères & soeurs qui en ont souffert. Sa citation favorite : “ Les amateurs de musique ont ceci de pénible qu'ils nous demandent toujours d'être totalement muets au moment même où nous souhaiterions être absolument sourds”. Oscar Wilde. Personne qui parle de lui-même toujours à la 3e personne parce qu'il ne se prend pas pour le luthier du coin le type!",
-  6,
-  5);
+  (1, "Stuff", 1),
+  (2, "Doodads", 1);
