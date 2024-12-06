@@ -1,0 +1,35 @@
+.FSbutton {
+  border-radius: 25px;
+  background: linear-gradient(270deg, #79afbb 0%, #79c2d3 100%);
+  padding: 8px 16px;
+  color: rgb(244, 244, 244);
+  border-style: none;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  font-size: 18px;
+  height: 37px;
+  cursor: pointer;
+}
+
+.FSbutton:hover {
+  opacity: 0.8;
+}
+
+.divButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 20px;
+  padding: 20px 20px;
+}
+
+.fs-image {
+  height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .divButton {
+    padding: 20px 50px;
+  }
+}
