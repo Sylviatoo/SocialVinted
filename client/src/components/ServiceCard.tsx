@@ -2,30 +2,35 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import "/src/styles/Card.css";
 
-interface CardProps {
+interface ServiceCardProps {
   img: string;
   title: string;
   date: string;
   description: string;
   user: string;
-  state: string;
 }
 
-export default function Card({
+export default function ServiceCard({
   img,
   title,
   date,
   description,
   user,
-  state,
-}: CardProps) {
+}: ServiceCardProps) {
   return (
     <div className="component-card">
       <Dialog.Root>
         <Dialog.Trigger asChild>
           <div className="card">
             <div className="card-content">
-              <img className="card-image" src={img} alt="image-annonce" />
+              <img
+                className="card-image"
+                src={
+                  img ||
+                  "https://media.istockphoto.com/id/1409329028/vector/no-picture-available-placeholder-thumbnail-icon-illustration-design.jpg?s=612x612&w=0&k=20&c=_zOuJu755g2eEUioiOUdz_mHKJQJn-tDgIAhQzyeKUQ="
+                }
+                alt="image-annonce"
+              />
               <div className="card-text">
                 <h2 className="card-title">{title}</h2>
                 <p className="card-date">{date}</p>
@@ -42,7 +47,14 @@ export default function Card({
               </button>
             </Dialog.Close>
             <div className="modal-content">
-              <img src={img} alt="" className="modal-image" />
+              <img
+                src={
+                  img ||
+                  "https://media.istockphoto.com/id/1409329028/vector/no-picture-available-placeholder-thumbnail-icon-illustration-design.jpg?s=612x612&w=0&k=20&c=_zOuJu755g2eEUioiOUdz_mHKJQJn-tDgIAhQzyeKUQ="
+                }
+                alt=""
+                className="modal-image"
+              />
               <div className="modal-details-container">
                 <Dialog.Title className="DialogTitle">{title}</Dialog.Title>
                 <Dialog.Description className="DialogDescription">
@@ -52,10 +64,6 @@ export default function Card({
                   <div className="Fieldset">
                     <span className="Label">Utilisateur :</span>
                     <p className="UserInfo">{user}</p>
-                  </div>
-                  <div className="Fieldset">
-                    <span className="Label">État :</span>
-                    <p className="UserInfo">{state}</p>
                   </div>
                   <div className="Fieldset">
                     <span className="Label">Date :</span>

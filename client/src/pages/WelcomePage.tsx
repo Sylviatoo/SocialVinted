@@ -1,7 +1,8 @@
-import Card from "../components/Card";
+import DonationCard from "../components/DonationCard";
 import FilterButton from "../components/FilterButton";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import ServiceCard from "../components/ServiceCard";
 import SortButton from "../components/SortButton";
 
 export default function WelcomePage() {
@@ -22,7 +23,7 @@ export default function WelcomePage() {
           <SortButton buttonSort={buttonSort} />
         </div>
         <section className="section-annonces">
-          <Card
+          <DonationCard
             user="Charlotte"
             title="Ordi ultra performant"
             state="t'inquiètes"
@@ -30,13 +31,20 @@ export default function WelcomePage() {
             description="Je fais don de mon ordinateur de compète. Apprenez à le dompter et vous serez satisfait."
             img="https://i.ebayimg.com/images/g/kJUAAOSw76Bmfo0j/s-l1600.webp"
           />
-          <Card
+          <DonationCard
             user="Julien"
             title="Grande étagère"
             state="très bon état"
             date="06/12/2024"
             description="Je me débarasse de cette étagère quasi neuve pour cause de déménagement."
             img="https://www.robindesbois.com/6428-large_default/etagere-bibliotheque-bois-et-metal-dante.jpg"
+          />
+          <ServiceCard
+            user="zj"
+            title="qsdfghjk"
+            date="06/12/2024"
+            description="sdfghjk"
+            img=""
           />
         </section>
       </main>
