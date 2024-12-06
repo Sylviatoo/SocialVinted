@@ -24,10 +24,12 @@ export default function Card({
       <Dialog.Root>
         <Dialog.Trigger asChild>
           <div className="card">
-            <img className="card-image" src={img} alt="image-annonce" />
-            <div className="card-text">
-              <h2 className="card-title">{title}</h2>
-              <p className="card-date">{date}</p>
+            <div className="card-content">
+              <img className="card-image" src={img} alt="image-annonce" />
+              <div className="card-text">
+                <h2 className="card-title">{title}</h2>
+                <p className="card-date">{date}</p>
+              </div>
             </div>
           </div>
         </Dialog.Trigger>
@@ -39,22 +41,28 @@ export default function Card({
                 <Cross2Icon />
               </button>
             </Dialog.Close>
-            <Dialog.Title className="DialogTitle">{title}</Dialog.Title>
-            <Dialog.Description className="DialogDescription">
-              {description}
-            </Dialog.Description>
-            <img src={img} alt="" className="modal-image" />
-            <div className="Fieldset">
-              <span className="Label">Utilisateur :</span>
-              <p className="UserInfo">{user}</p>
-            </div>
-            <div className="Fieldset">
-              <span className="Label">État :</span>
-              <p className="UserInfo">{state}</p>
-            </div>
-            <div className="Fieldset">
-              <span className="Label">Date :</span>
-              <p className="UserInfo">{date}</p>
+            <div className="modal-content">
+              <img src={img} alt="" className="modal-image" />
+              <div className="modal-details-container">
+                <Dialog.Title className="DialogTitle">{title}</Dialog.Title>
+                <Dialog.Description className="DialogDescription">
+                  {description}
+                </Dialog.Description>
+                <div className="modal-details">
+                  <div className="Fieldset">
+                    <span className="Label">Utilisateur :</span>
+                    <p className="UserInfo">{user}</p>
+                  </div>
+                  <div className="Fieldset">
+                    <span className="Label">État :</span>
+                    <p className="UserInfo">{state}</p>
+                  </div>
+                  <div className="Fieldset">
+                    <span className="Label">Date :</span>
+                    <p className="UserInfo">{date}</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </Dialog.Content>
         </Dialog.Portal>

@@ -6,6 +6,18 @@
   padding: 0 20px 20px 20px;
 }
 
+.modal-content {
+  padding-top: 40px;
+}
+
+.modal-image {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
 .card {
   background-color: #fff;
   border-radius: 8px;
@@ -81,13 +93,6 @@
   .card-image {
     height: 220px;
   }
-}
-
-.modal-image {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 16px;
 }
 
 @keyframes fadeIn {
@@ -183,10 +188,6 @@
   color: #555;
 }
 
-.Fieldset {
-  margin-bottom: 12px;
-}
-
 .Label {
   font-weight: bold;
   color: #333;
@@ -210,4 +211,61 @@
 
 .Button.green:hover {
   background-color: #45a049;
+}
+
+.modal-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media screen and (min-width: 1024px) {
+  .DialogContent {
+    padding: 24px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    z-index: 20;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .modal-content {
+    padding-top: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 32px;
+  }
+
+  .modal-image {
+    width: auto;
+    max-width: 500px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0;
+  }
+
+  .modal-details-container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .DialogTitle {
+    text-align: left;
+    margin-bottom: 16px;
+  }
+
+  .DialogDescription {
+    text-align: left;
+    margin-bottom: 16px;
+  }
 }
