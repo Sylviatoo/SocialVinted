@@ -1,6 +1,6 @@
-/*import { useEffect, useState } from "react";
-import "../assets/images/SearchBar.css";
-import "../assets/images/loupe.png";
+import { useEffect, useState } from "react";
+import "../assets/styles/SearchBar.css";
+import type { Card } from "../types/interface";
 
 interface SearchBarProps {
   setShowCard: (show: boolean) => void;
@@ -8,10 +8,12 @@ interface SearchBarProps {
   setSearchResult: (search: string) => void;
 }
 
+/*const apiKey = import.meta.env.VITE_API_KEY;*/
+
 const SearchBar = ({
+  setSearchResult,
   setShowCard,
   setIdCard,
-  setSearchResult,
 }: SearchBarProps) => {
   const [searchText, setSearchText] = useState<string>("");
   const [searchResults, setSearchResults] = useState<Card[]>([]);
@@ -19,10 +21,11 @@ const SearchBar = ({
   useEffect(() => {
     if (searchText.trim()) {
       searchBarQuery(searchText);
+      console.info(setIdCard, setShowCard);
     } else {
       setSearchResults([]);
     }
-  }, [searchText]);
+  }, [searchText, setIdCard, setShowCard]);
 
   async function searchBarQuery(searchTerm: string) {
     try {
@@ -39,33 +42,44 @@ const SearchBar = ({
   }
 
   return (
-    <form className="search-bar">
-      <input
-        type="text"
-        value={searchText}
-        placeholder="Rechercher..."
-        className="search-input"
-        onChange={(e) => {
-          setSearchText(e.target.value);
-        }}
-      />
-      <button
-        type="button"
-        className="search-button"
-        onClick={() => {
-          if (searchText.trim()) {
-            searchBarQuery(searchText);
-          }
-        }}
-      >
-        <img
-          className="image-loupe"
-          src="/src/assets/loupe.png"
-          alt="Rechercher"
+    <div className="search-container">
+      <form className="search-bar">
+        <input
+          type="text"
+          value={searchText}
+          placeholder="Rechercher..."
+          className="search-input"
+          onChange={(e) => {
+            setSearchText(e.target.value);
+          }}
         />
-      </button>
-    </form>
+        <button
+          type="button"
+          className="search-button"
+          onClick={() => {
+            if (searchText.trim()) {
+              searchBarQuery(searchText);
+            }
+          }}
+        >
+          <img
+            className="image-loupe"
+            src="/src/assets/loupe.png"
+            alt="Rechercher"
+          />
+        </button>
+      </form>
+      {searchResults.length > 0 && (
+        <div className="search-results">
+          {searchResults.map((result) => (
+            <div key={result.id} className="search-result-item">
+              {result.title}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
   );
 };
 
-export default SearchBar;*/
+export default SearchBar;
