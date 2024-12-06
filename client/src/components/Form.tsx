@@ -1,11 +1,6 @@
-import { useEffect, useState } from "react";
-import "../styles/Form.css";
+import { useState } from "react";
+import "../assets/styles/Form.css";
 import { useNavigate } from "react-router-dom";
-import type {
-  Condition,
-  DonationCategory,
-  ServiceCategory,
-} from "../types/social-vinted-types";
 
 export default function Form() {
   const [value, setValue] = useState("1");
@@ -14,30 +9,6 @@ export default function Form() {
     const setPage = "/";
     navigate(setPage);
   };
-
-  const [conditionCategories, setConditionCategories] = useState<Condition[]>(
-    Array<Condition>(0),
-  );
-
-  const [donationCategories, setDonationCategories] = useState<
-    DonationCategory[]
-  >(Array<DonationCategory>(0));
-
-  const [serviceCategories, setServiceCategories] = useState<ServiceCategory[]>(
-    Array<DonationCategory>(0),
-  );
-
-  useEffect(() => {
-    fetch("http://localhost:3310/api/condition_categories")
-      .then((response) => response.json())
-      .then((data) => setConditionCategories(data as Condition[]));
-    fetch("http://localhost:3310/api/donation_categories")
-      .then((response) => response.json())
-      .then((data) => setDonationCategories(data as DonationCategory[]));
-    fetch("http://localhost:3310/api/service_categories")
-      .then((response) => response.json())
-      .then((data) => setServiceCategories(data as ServiceCategory[]));
-  }, []);
 
   return (
     <>
@@ -54,26 +25,25 @@ export default function Form() {
           <label>
             Catégorie
             <select className="category">
-              {donationCategories.map((item) => {
-                return (
-                  <option key={item.id} value={item.id}>
-                    {item.name}
-                  </option>
-                );
-              })}
+              <option value="1">Alimentaire</option>
+              <option value="2">Produits d'hygiène</option>
+              <option value="3">Vêtements</option>
+              <option value="4">Jouets</option>
+              <option value="5">Electroménager</option>
+              <option value="6">Meuble</option>
+              <option value="7">Produits pour bébé</option>
+              <option value="8">Informatique</option>
             </select>
           </label>
         ) : (
           <label>
             Catégorie
             <select>
-              {serviceCategories.map((item) => {
-                return (
-                  <option key={item.id} value={item.id}>
-                    {item.name}
-                  </option>
-                );
-              })}
+              <option value="1">Bricolage</option>
+              <option value="2">Aide aux courses</option>
+              <option value="3">Garde d'animaux de compagnie</option>
+              <option value="4">Garde d'enfants</option>
+              <option value="5">Soutien aux personnes isolées</option>
             </select>
           </label>
         )}
@@ -90,13 +60,11 @@ export default function Form() {
           <label>
             Etat
             <select>
-              {conditionCategories.map((item) => {
-                return (
-                  <option key={item.id} value={item.id}>
-                    {item.name}
-                  </option>
-                );
-              })}
+              <option value="1">Neuf sous emballage d'origine</option>
+              <option value="2">Etat neuf</option>
+              <option value="3">Très bon état</option>
+              <option value="4">Bon état</option>
+              <option value="5">Satisfaisant</option>
             </select>
           </label>
         ) : (

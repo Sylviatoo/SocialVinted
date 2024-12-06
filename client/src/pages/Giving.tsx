@@ -1,7 +1,8 @@
-import "../styles/Footer.css";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import Form from "../components/Form";
+import "../assets/styles/Giving.css";
+import "../assets/styles/Footer.css";
 
 export default function Giving() {
   const imgUrl = "/src/assets/images/LOGO_Social_Vinted.png";

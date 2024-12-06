@@ -1,11 +1,13 @@
 import { useNavigate } from "react-router-dom";
-import "../styles/Header.css";
+import "../assets/styles/Header.css";
+import SearchBar from "../components/SearchBar";
+
 interface HeaderProps {
   imgUrl: string;
   title: string;
   searchbar: string;
 }
-export default function Header({ imgUrl, title, searchbar }: HeaderProps) {
+export default function Header({ imgUrl, title }: HeaderProps) {
   const navigate = useNavigate();
   const handleClick = () => {
     const setPage = "/giving";
@@ -19,7 +21,17 @@ export default function Header({ imgUrl, title, searchbar }: HeaderProps) {
           <h2 className="title">Social Vinted</h2>
         </div>
         <div className="welcome">
-          <h1>{searchbar}</h1>
+          <SearchBar
+            setShowCard={(show: boolean) => {
+              console.info(show);
+            }}
+            setIdCard={(id: number) => {
+              console.info(id);
+            }}
+            setSearchResult={(search: string) => {
+              console.info(search);
+            }}
+          />
           <button className="button" type="button" onClick={handleClick}>
             {title}
           </button>
