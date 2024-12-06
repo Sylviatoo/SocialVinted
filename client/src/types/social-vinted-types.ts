@@ -1,4 +1,4 @@
-export interface ServiceFull {
+export interface Service {
   id: number;
   date: string;
   picture: string;
@@ -9,7 +9,7 @@ export interface ServiceFull {
   location: string;
 }
 
-export interface DonationFull {
+export interface Donation {
   id: number;
   date: string;
   picture: string;
@@ -19,4 +19,19 @@ export interface DonationFull {
   condition_category_name: string;
   user_name: string;
   location: string;
+}
+
+export interface DonationCategory {
+  id: number;
+  name: string;
+}
+
+export interface ServiceCategory {
+  id: number;
+  name: string;
+}
+
+export interface Condition {
+  id: number;
+  name: string;
 }
