@@ -233,7 +233,7 @@ export default function WelcomePage() {
               user={item.user_name}
               title={item.title}
               state={item.condition_category_name}
-              date={item.date}
+              date={new Date(item.date).toLocaleDateString("fr-FR")}
               description={item.description}
               img={item.picture}
             />
@@ -243,7 +243,7 @@ export default function WelcomePage() {
               key={`service-${item.id}`}
               user={item.user_name}
               title={item.title}
-              date={item.date}
+              date={new Date(item.date).toLocaleDateString("fr-FR")}
               description={item.description}
               img={item.picture}
             />
