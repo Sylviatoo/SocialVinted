@@ -26,14 +26,7 @@ label {
 }
 
 select {
-  width: 100%;
-  max-width: 500px;
-  padding: 10px;
   padding-right: 30px;
-  border-radius: 20px;
-  border: 1px solid #ccc;
-  margin-top: 5px;
-  box-sizing: border-box;
   background-color: white;
   appearance: none;
   -webkit-appearance: none;
@@ -45,7 +38,6 @@ select {
 select,
 input[type="text"] {
   width: 100%;
-  max-width: 500px;
   padding: 10px;
   border-radius: 20px;
   border: 1px solid #ccc;

@@ -7,7 +7,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
-import Giving from "./components/Giving";
+import Giving from "./pages/Giving";
 import WelcomePage from "./pages/WelcomePage";
 
 // Import additional components for new routes
