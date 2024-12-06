@@ -53,21 +53,22 @@ const SearchBar = ({
             setSearchText(e.target.value);
           }}
         />
-        <button
-          type="button"
-          className="search-button"
+
+        <img
+          className="image-loupe"
+          src="/src/assets/images/loupe.webp"
+          alt="Rechercher"
           onClick={() => {
             if (searchText.trim()) {
               searchBarQuery(searchText);
             }
           }}
-        >
-          <img
-            className="image-loupe"
-            src="/src/assets/images/loupe.webp"
-            alt="Rechercher"
-          />
-        </button>
+          onKeyDown={() => {
+            if (searchText.trim()) {
+              searchBarQuery(searchText);
+            }
+          }}
+        />
       </form>
       {searchResults.length > 0 && (
         <div className="search-results">
