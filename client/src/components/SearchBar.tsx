@@ -64,7 +64,7 @@ const SearchBar = ({
         >
           <img
             className="image-loupe"
-            src="/src/assets/loupe.png"
+            src="/src/assets/images/loupe.webp"
             alt="Rechercher"
           />
         </button>
