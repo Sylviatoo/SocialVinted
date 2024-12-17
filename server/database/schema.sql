@@ -35,41 +35,6 @@ create table donation (
   foreign key(condition_id) references condition_category(id),
   foreign key(category_id) references donation_category(id),
   foreign key(user_id) references user(id)
-  name varchar(255) not null,
-  picture text not null,
-  location varchar(255) not null,
-  rating int unsigned not null default 0,
-  nb_services int unsigned not null default 0,
-  nb_donations int unsigned not null default 0
-);
-
-create table service_category (
-  id int unsigned primary key auto_increment not null,
-  name varchar(80)
-);
-
-create table donation_category (
-  id int unsigned primary key auto_increment not null,
-  name varchar(80)
-);
-
-create table condition_category (
-  id int unsigned primary key auto_increment not null,
-  name varchar(80)
-);
-
-create table donation (
-  id int unsigned primary key auto_increment not null,
-  date date not null,
-  picture text not null,
-  title varchar(255) not null,
-  description text not null,
-  condition_id int unsigned not null,
-  category_id int unsigned not null,
-  user_id int unsigned not null,
-  foreign key(condition_id) references condition_category(id),
-  foreign key(category_id) references donation_category(id),
-  foreign key(user_id) references user(id)
 );
 
 create table service (
@@ -115,15 +80,7 @@ values
     3,
     8,
     8 
-    ),
-  (5,
-    "Arthur Heurtebise",
-    "https://i1.sndcdn.com/avatars-000395959800-dz9g6i-t1080x1080.jpg",
-    "Toulouse, Haute-Garonne, France",
-    5,
-    1,
-    1
-  );
+    );
 
 insert into donation_category (id, name)
 values 
@@ -198,5 +155,15 @@ values
  
 insert into service (id, date, title, description, category_id, user_id)
 values
-  (1, "Stuff", 1),
-  (2, "Doodads", 1);
+  (1,
+  "2024-11-25",
+  "Services pour votre quotidien",
+  "J'offre des services de bricolage en électricité, plomberie, motage de meubles, etc...",
+  1,
+  1),
+ (2,
+  "2024-12-05",
+  "Services pour réparation et maintenance de votre voiture",
+  "J'offre des services de réparation de votre véhicule.",
+  1,
+  4);
